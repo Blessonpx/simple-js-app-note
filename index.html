@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Simple JS App</title>
+  <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="app">
+    <h1 id="title">Hello from Note app</h1>
+    <button onclick="changeMessage()">Click Me</button>
+  </div>
+
+  <!-- Quill editor container -->
+  <div id="editor" style="height: 200px;"></div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+
+  <!-- Initialize Quill -->
+  <script>
+    const quill = new Quill('#editor', {
+      modules: {
+        toolbar: false // You can add more modules if needed
+      },
+      placeholder: 'Start typing...',
+      theme: 'snow'
+    });
+    const editorContent = quill.getContents();
+    console.log(editorContent);
+  </script>
+
+</body>
+</html>
