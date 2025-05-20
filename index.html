@@ -13,6 +13,7 @@
 
   <!-- Quill editor container -->
   <div id="editor" style="height: 200px;"></div>
+  <button onclick="showQuillContent()" style="margin-top: 10px" >Print Editor Content</button>
 
   <!-- JS -->
   <script src="script.js"></script>
@@ -27,7 +28,21 @@
       placeholder: 'Start typing...',
       theme: 'snow'
     });
+
+    // Expose quill globally to be used by script.js
+    window.quill=quill;
   </script>
 
+<div class="button3">
+  <button onclick="makeApiCall()" style="margin-top: 10px;">API Call</button>
+<p id="api-status"></p> <!-- Status message -->
+
+
+<h2>Dynamic Dropdown + Input Rows</h2>
+<div id="configAdder"></div>
+<button onclick="addRow()">Add Row</button>
+<script src="script.js"></script>
+
+</div>
 </body>
 </html>
